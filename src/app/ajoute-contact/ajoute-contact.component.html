@@ -1,0 +1,56 @@
+<div class="container">
+
+
+
+<form (submit)="AjouterContact()">
+    <div class="mb-3">
+        <label for="nom" class="form-label">Nom</label>
+        <input type="text" class="form-control" id="nom" [(ngModel)]="utilisateur.nom" name="nom" >
+      </div>
+      <div class="mb-3">
+        <label for="prénom" class="form-label">prénom</label>
+        <input type="text" class="form-control" id="nom"[(ngModel)]="utilisateur.prenom" name="prenom" >
+      </div>
+   
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="utilisateur.email" name="email" >
+    </div>
+    <div class="mb-3">
+        <label for="etat" class="form-label">état</label>
+        <input type="text" class="form-control" id="état" [(ngModel)]="utilisateur.etat" name="etat"  [ngModelOptions]="{ standalone: true }">
+      </div>
+      <div class="mb-3">
+        <label for="telephone" class="form-label">téléphone</label>
+        <input type="text" class="form-control" id="telephone" [(ngModel)]="utilisateur.telephone" name="telephone" >
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">description</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]="utilisateur.description" name="ndescription" >
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Email</th>
+        <th scope="col">telephone</th>
+        <th scope="col">etat</th>
+        <th scope="col">description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{contact.nom}}</td>
+        <td>{{contact.prenom}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.telephone}}</td>
+        <td>{{contact.etat}}</td>
+        <td>{{contact.description}}</td>
+      </tr>
+   
+    </tbody>
+  </table>
+</div>
