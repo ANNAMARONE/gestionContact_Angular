@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { contact } from './contact.model';
-import { error } from 'console';
+import { LocalStorageService } from '../local-storage.service';
 
 
 
@@ -21,20 +21,23 @@ corbeille: contact[] = [];
 utilisateur:contact = new contact();
 contactEnCours: contact | null = null;
   indexEnCours: number | null = null;
-ngOnInit(): void {
-  const contactsString = localStorage.getItem('contacts');
-  if (contactsString) { 
-    this.contacts = JSON.parse(contactsString);
-  } else {
-    this.contacts = []; 
+
+  constructor(private localStorageService: LocalStorageService) {};
+  ngOnInit(): void {
+   
+    const contactsString = this.localStorageService.get('contacts');
+    if (contactsString) {
+      this.contacts = contactsString;
+    } else {
+      this.contacts = [];
+    }
   }
-}
 
 
   AjouterContact(): void{
     this.contacts.push(this.utilisateur);
     this.utilisateur = new contact();
-    localStorage.setItem('contacts',JSON.stringify(this.contacts)) 
+    this.localStorageService.set('contacts', this.contacts);
    }
 
    SupprimerContact(contact:contact):void{
