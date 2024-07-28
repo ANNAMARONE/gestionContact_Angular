@@ -4,11 +4,11 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
   standalone: true,
-  imports: [CommonModule, ContactListComponent]
+  imports: [CommonModule, ContactListComponent],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'gestionContact_Angular';
+  title = 'gestionContact';
 }
