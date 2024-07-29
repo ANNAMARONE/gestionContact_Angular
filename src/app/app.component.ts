@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CorbeilleComponent } from './corbeille/corbeille.component';
-import { ModificationComponent } from './modification/modification.component';
-import { AfficherContactComponent } from './afficher-contact/afficher-contact.component';
+
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AjouteContactComponent } from './ajoute-contact/ajoute-contact.component';
@@ -16,9 +14,9 @@ import { ContactListComponent } from './contact-list/contact-list.component';
   standalone: true,
   imports: [
     RouterOutlet,
-    CorbeilleComponent,
-    ModifiactionComponent,
-    AfficherContactComponent,
+    // CorbeilleComponent,
+    // ModifiactionComponent,
+    // AfficherContactComponent,
     RouterModule,
     CommonModule,
     ContactListComponent,
