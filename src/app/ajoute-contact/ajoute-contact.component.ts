@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { contact } from './contact.model';
 import { LocalStorageService } from '../local-storage.service';
 
