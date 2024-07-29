@@ -1,0 +1,12 @@
+<div>
+  <input [(ngModel)]="searchTerm" (input)="searchContacts()" placeholder="Search contacts..."/>
+  <div *ngFor="let contact of contacts">
+    <div>
+      <p>{{ contact.prenom }} {{ contact.nom }}</p>
+      <p>{{ contact.email }}</p>
+      <p>{{ contact.telephone }}</p>
+      <button (click)="viewDetails(contact.id)">View Details</button>
+      <button (click)="deleteContact(contact.id)">Delete</button>
+    </div>
+  </div>
+</div>
