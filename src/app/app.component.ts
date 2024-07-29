@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ContactListComponent } from './contact-list/contact-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, ContactListComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  imports: [RouterModule, CommonModule]
 })
 export class AppComponent {
-  title = 'gestionContact';
+  title = 'gestionContact_Angular';
 }
