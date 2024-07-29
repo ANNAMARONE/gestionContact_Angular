@@ -1,0 +1,10 @@
+<div *ngFor="let contact of contacts">
+    <p>{{ contact.nom }} {{ contact.prenom }}</p>
+    <p>{{ contact.email }}</p>
+    <p>{{ contact.telephone }}</p>
+    <p>{{ contact.etat }}</p>
+    <p>{{ contact.createdAt | date }}</p>
+    <p>{{ contact.updatedAt | date }}</p>
+    <button (click)="deleteContact(contact)">Delete</button>
+  </div>
+  
