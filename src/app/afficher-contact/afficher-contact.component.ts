@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { LocalStorageService } from '../local-storage.service';
 import { Contact } from '../contact.model';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-afficher-contact',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './afficher-contact.component.html',
   styleUrls: ['./afficher-contact.component.scss']
 })
@@ -16,6 +16,7 @@ export class AfficherContactComponent implements OnInit {
   corbeille: Contact[] = [];
   contactEnCours: Contact | null = null;
   indexEnCours: number | null = null;
+  searchTerm: any;
 
   constructor(private localStorageService: LocalStorageService, private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -61,5 +62,12 @@ export class AfficherContactComponent implements OnInit {
 
   editContact(index: number): void {
     this.router.navigate(['/modifier-contact', index]);
+  }
+  searchContact() {
+    if (this.searchTerm.trim()) {
+      this.contacts = this.localStorageService.searchContacts(this.searchTerm);
+    } else {
+      this.contacts = this.localStorageService.getContacts();
+    }
   }
 }
