@@ -1,6 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'angular17_login_signup_localstorage';
+
 import { RouterOutlet } from '@angular/router';
 
 import { NgForm } from '@angular/forms';

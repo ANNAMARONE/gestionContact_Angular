@@ -1,7 +1,38 @@
+
 // app-routing.module.ts
+
 import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
+
+import { LoginComponent } from './pages/login/login.component';
+import { LayoutComponent } from './pages/layout/layout.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+NgModule({
+  declarations: [],
+  imports: [CommonModule],
+});
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
+    ],
+  },
 import { AfficherContactComponent } from './afficher-contact/afficher-contact.component';
 import { AjouterContactComponent } from './ajouter-contact/ajouter-contact.component';
 import { ModifierContactComponent } from './modifier-contact/modifier-contact.component';
@@ -14,10 +45,13 @@ const routes: Routes = [
   { path: 'modifier-contact/:index', component: ModifierContactComponent },
   { path: 'corbeille', component: AfficherCorbeilleComponent },  
 
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+
+  exports: [RouterModule],
+
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
