@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CorbeilleComponent } from './corbeille.component';
+import { AjouterContactComponent } from './ajouter-contact.component';
 
-describe('CorbeilleComponent', () => {
-  let component: CorbeilleComponent;
-  let fixture: ComponentFixture<CorbeilleComponent>;
+describe('AjouterContactComponent', () => {
+  let component: AjouterContactComponent;
+  let fixture: ComponentFixture<AjouterContactComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CorbeilleComponent]
+      imports: [AjouterContactComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CorbeilleComponent);
+    fixture = TestBed.createComponent(AjouterContactComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

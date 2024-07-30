@@ -1,6 +1,4 @@
 
-
-
   
 
   <html lang="en">
@@ -179,43 +177,42 @@
                 <div class="col-md-3">
                  
                 </div>
-                <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                <form (ngSubmit)="AjouterContact()">
                 <div class="col-md-9">
                   <div class="contact-form">
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="fname">nom</label>
                       <div class="col-sm-10">          
-                        <input type="text" id="nom" name="nom" [(ngModel)]="contact.nom" required class="form-control" />
+                        <input type="text" class="form-control" id="nom" [(ngModel)]="utilisateur.nom" name="nom" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="lname">prenom</label>
                       <div class="col-sm-10">          
-                        <input type="text" id="prenom" name="prenom" [(ngModel)]="contact.prenom" required class="form-control" />
+                        <input type="text" class="form-control" id="prenom" [(ngModel)]="utilisateur.prenom" name="prenom" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="email">Email:</label>
                       <div class="col-sm-10">
-                        <input type="email" id="email" name="email" [(ngModel)]="contact.email" required class="form-control" />
+                        <input type="email" class="form-control" id="email" [(ngModel)]="utilisateur.email" name="email" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="email">telephone</label>
                       <div class="col-sm-10">
-                        <input type="tel" id="telephone" name="telephone" [(ngModel)]="contact.telephone" required class="form-control" />
+                        <input type="text" class="form-control" id="telephone" [(ngModel)]="utilisateur.telephone" name="telephone" required>
                       </div>
                     </div>
                     <div class="form-group">
                       <label class="control-label col-sm-2" for="comment">Description:</label>
                       <div class="col-sm-10">
-                        <textarea id="description" name="description" [(ngModel)]="contact.description" class="form-control"></textarea>
+                      <textarea class="form-control" rows="5" id="description" [(ngModel)]="utilisateur.description" name="description"></textarea>
                       </div>
                     </div>
                     <div class="form-group">        
                       <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-primary">Enregistrer</button>
-                        <a href="/contacts" class="btn btn-secondary">Annuler</a>
+                      <button type="submit" class="btn btn-default">Ajouter</button>
                       </div>
                     </div>
                   </div>
