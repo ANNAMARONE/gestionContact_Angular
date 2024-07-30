@@ -1,3 +1,4 @@
+
 export class Contact {
     nom: string;
     prenom: string;
@@ -23,3 +24,4 @@ export class Contact {
     }
   }
   
+

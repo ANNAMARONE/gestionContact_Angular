@@ -1,3 +1,4 @@
+
 import { Routes } from '@angular/router';
 import { AfficherContactComponent } from './afficher-contact/afficher-contact.component';
 import { AjouterContactComponent } from './ajouter-contact/ajouter-contact.component';
@@ -13,3 +14,4 @@ export const routes: Routes = [
   { path: 'corbeille', component: AfficherCorbeilleComponent },  
 
 ];
+
