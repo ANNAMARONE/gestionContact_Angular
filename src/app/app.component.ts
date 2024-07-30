@@ -1,15 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
-})
-export class AppComponent {
-  title = 'angular17_login_signup_localstorage';
-
 import { RouterOutlet } from '@angular/router';
 
 import { NgForm } from '@angular/forms';
@@ -21,15 +11,19 @@ import { ModifierContactComponent } from './modifier-contact/modifier-contact.co
 import { CommonModule } from '@angular/common';
 
 
+
+
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
 
-  imports: [AjouterContactComponent,AfficherContactComponent,AfficherCorbeilleComponent,ModifierContactComponent,RouterOutlet],
+  imports: [RouterModule, CommonModule,AjouterContactComponent,AfficherContactComponent,AfficherCorbeilleComponent,ModifierContactComponent,RouterOutlet],
 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [RouterModule, CommonModule]
+  
 })
 export class AppComponent {
   title = 'gestionContact_Angular';
